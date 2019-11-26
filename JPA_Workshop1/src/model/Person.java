@@ -1,4 +1,4 @@
-package iss.persistent;
+package model;
 
 import java.io.PrintWriter;
 

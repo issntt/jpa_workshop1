@@ -1,4 +1,4 @@
-package iss.persistent;
+package data;
 
 import java.util.List;
 
@@ -6,15 +6,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import model.Member;
+
 public class Test {
 	public static void main (String[] args) {
 		EntityManagerFactory emf = 
 				Persistence.createEntityManagerFactory("JPA01");
 		EntityManager em = emf.createEntityManager();
-		DataService dataService = new DataService(em);
+//		DataService dataService = new DataService(em);
 		
 		// Create and persist a member
-		createAndPersistMembers(em, dataService);
+//		createAndPersistMembers(em, dataService);
 		
 		
 		
@@ -35,12 +37,12 @@ public class Test {
 //		System.out.println("Found employee: " + e);
 	}
 	
-	private static void createAndPersistMembers(EntityManager em, DataService dataService) {
-		em.getTransaction().begin();
-		Member member1 = dataService.createMember(101, "Einstein", "Albert", null);
-		Member member2 = dataService.createMember(102, "Picasso", "Pablo", "Ruiz");
-		
-		em.getTransaction().commit();
-		System.out.println("Members have been persisted");
-	}
+//	private static void createAndPersistMembers(EntityManager em, DataService dataService) {
+//		em.getTransaction().begin();
+//		Member member1 = dataService.createMember(101, "Einstein", "Albert", null);
+//		Member member2 = dataService.createMember(102, "Picasso", "Pablo", "Ruiz");
+//		
+//		em.getTransaction().commit();
+//		System.out.println("Members have been persisted");
+//	}
 }
